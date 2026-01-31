@@ -6,34 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    /* =========================================================
+    /* =========================
        RESET
-       ========================================================= */
+       ========================= */
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
-      height: 100%;
+      min-height: 100vh;
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    /* =========================================================
-       DESKTOP HÁTTÉR (IMG-ALAPÚ, NEM NAGYÍT)
-       ========================================================= */
-    .bg-image {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
+    /* =========================
+       HÁTTÉR – EGYSÉGES, STABIL
+       ========================= */
+    body {
       background-color: #050505;
-      z-index: -1;
+      background-image: url("background.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;   /* nem zoomol */
     }
 
-    /* =========================================================
+    /* =========================
        TARTALOM
-       ========================================================= */
+       ========================= */
     .content {
       min-height: 100vh;
       display: flex;
@@ -41,9 +38,9 @@
       justify-content: center;
     }
 
-    /* =========================================================
+    /* =========================
        PANEL – STABIL
-       ========================================================= */
+       ========================= */
     .card {
       background: #111;
       border-radius: 20px;
@@ -55,9 +52,9 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
 
-    /* =========================================================
+    /* =========================
        SZÖVEGEK
-       ========================================================= */
+       ========================= */
     h1 {
       font-size: 22px;
       margin-bottom: 6px;
@@ -79,9 +76,9 @@
       margin-bottom: 20px;
     }
 
-    /* =========================================================
+    /* =========================
        GOMBOK
-       ========================================================= */
+       ========================= */
     .btn {
       display: block;
       margin: 10px 0;
@@ -97,53 +94,19 @@
       background: #333;
     }
 
-    /* =========================================================
+    /* =========================
        FOOTER
-       ========================================================= */
+       ========================= */
     footer {
       margin-top: 20px;
       font-size: 12px;
       opacity: 0.6;
-    }
-
-    /* =========================================================
-       MOBIL MEGOLDÁS – NFC-BIZTOS
-       ========================================================= */
-   @media (max-width: 768px) {
-
-  html, body {
-    min-height: 100vh;          /* 🔑 EZ HIÁNYZOTT */
-  }
-
-  body {
-    background-color: #050505;
-    background-image: url("background.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-
-  .bg-image {
-    display: none;
-  }
-
-  .content {
-    min-height: 100vh;          /* 🔑 FONTOS */
-  }
-
-  .card {
-    padding: 24px;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- DESKTOP HÁTTÉR -->
-  <img class="bg-image" src="background.jpg" alt="Wormy háttér">
-
-  <!-- TARTALOM -->
   <div class="content">
     <div class="card">
       <h1>Ez a te Wormy-d</h1>
@@ -160,6 +123,10 @@
       </footer>
     </div>
   </div>
+
+</body>
+</html>
+
 
 </body>
 </html>
