@@ -6,36 +6,48 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* HÁTTÉRKÉP – EZ MOST BIZTOSAN LÁTSZANI FOG */
-.bg-image {
+/* háttérkép réteg */
+.bg-wrapper {
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;      /* 🔑 nincs nagyítás */
-  object-position: center;
-  background: #050505;
   z-index: -1;
+  background: #050505;
 }
 
-/* TARTALOM */
+.bg-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* 🔑 EZ oldja meg a problémát */
+  object-position: center;
+}
+
+/* sötét overlay */
+.bg-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* tartalom */
 .content {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* ÁTTETSZŐ PANEL – BLUR NÉLKÜL */
+/* kártya */
 .card {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.08);
   border-radius: 20px;
   padding: 28px;
   max-width: 380px;
   width: 90%;
   color: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
 
 h1 {
