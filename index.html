@@ -2,29 +2,129 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
-  <title>TEST</title>
+  <title>Ez a te Wormy-d</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
+    /* =========================
+       RESET
+       ========================= */
     html, body {
       margin: 0;
       padding: 0;
+      width: 100%;
       min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
+    /* =========================
+       HÁTTÉR – STABIL, MOBILBARÁT
+       ========================= */
     body {
-      background: red;
+      background-color: #050505;
+      background-image: url("background.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain; /* nem nagyít */
+    }
+
+    /* =========================
+       TARTALOM
+       ========================= */
+    .content {
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-size: 24px;
-      font-family: sans-serif;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* =========================
+       PANEL – SÖTÉT, STABIL
+       ========================= */
+    .card {
+      background: #111;
+      border-radius: 20px;
+      padding: 28px;
+      max-width: 380px;
+      width: 100%;
+      color: #ffffff;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    /* =========================
+       SZÖVEGEK
+       ========================= */
+    h1 {
+      font-size: 22px;
+      margin: 0 0 6px;
+    }
+
+    .id {
+      font-size: 14px;
+      opacity: 0.8;
+      margin-bottom: 16px;
+    }
+
+    .status {
+      background: #19c37d;
+      color: #000000;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       GOMBOK
+       ========================= */
+    .btn {
+      display: block;
+      margin: 10px 0;
+      padding: 14px;
+      border-radius: 12px;
+      background: #222;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      background: #333;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      opacity: 0.6;
     }
   </style>
 </head>
 
 <body>
-  CSS FUT
+
+  <div class="content">
+    <div class="card">
+      <h1>Ez a te Wormy-d</h1>
+      <div class="id">Wormy ID: WMY-001238</div>
+      <div class="status">Aktív · Regisztrált</div>
+
+      <a class="btn" href="#">Használati útmutató</a>
+      <a class="btn" href="#">Wormy AI asszisztens</a>
+      <a class="btn" href="#">Garancia &amp; szerviz</a>
+      <a class="btn" href="#">Kapcsolat</a>
+
+      <footer>
+        Ez nem egy tömegtermék. Ez a te eszközöd.
+      </footer>
+    </div>
+  </div>
+
 </body>
 </html>
