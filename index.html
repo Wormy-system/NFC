@@ -1,93 +1,120 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Ez a te Wormy-d</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-/* háttérkép réteg */
-.bg-wrapper {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: #050505;
-}
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
-.bg-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;   /* 🔑 EZ oldja meg a problémát */
-  object-position: center;
-}
+    /* ===== HÁTTÉRKÉP – STABIL, NEM NAGYÍT ===== */
+    .bg-image {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;       /* NEM zoomol */
+      object-position: center;
+      background-color: #050505;
+      z-index: -1;
+    }
 
-/* sötét overlay */
-.bg-wrapper::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-}
+    /* ===== TARTALOM ===== */
+    .content {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* tartalom */
-.content {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    /* ===== PANEL (NEM ÁTTETSZŐ) ===== */
+    .card {
+      background: #111;          /* stabil, sötét panel */
+      border-radius: 20px;
+      padding: 28px;
+      max-width: 380px;
+      width: 90%;
+      color: white;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
 
-/* kártya */
-.card {
-  background: rgba(255,255,255,0.08);
-  border-radius: 20px;
-  padding: 28px;
-  max-width: 380px;
-  width: 90%;
-  color: white;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
-  text-align: center;
-}
+    /* ===== SZÖVEG ===== */
+    h1 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
 
-h1 {
-  font-size: 22px;
-  margin-bottom: 6px;
-}
+    .id {
+      font-size: 14px;
+      opacity: 0.8;
+      margin-bottom: 16px;
+    }
 
-.id {
-  font-size: 14px;
-  opacity: 0.8;
-  margin-bottom: 16px;
-}
+    .status {
+      background: #19c37d;
+      color: black;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
 
-.status {
-  background: #19c37d;
-  color: black;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 13px;
-  display: inline-block;
-  margin-bottom: 20px;
-}
+    /* ===== GOMBOK ===== */
+    .btn {
+      display: block;
+      margin: 10px 0;
+      padding: 14px;
+      border-radius: 12px;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-.btn {
-  display: block;
-  margin: 10px 0;
-  padding: 14px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.15);
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-}
+    .btn:hover {
+      background: #333;
+    }
 
-.btn:hover {
-  background: rgba(255,255,255,0.25);
-}
+    /* ===== FOOTER ===== */
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
 
-footer {
-  margin-top: 20px;
-  font-size: 12px;
-  opacity: 0.6;
-}
+<body>
+
+  <!-- HÁTTÉRKÉP -->
+  <img class="bg-image" src="background.jpg" alt="Wormy háttér">
+
+  <!-- TARTALOM -->
+  <div class="content">
+    <div class="card">
+      <h1>Ez a te Wormy-d</h1>
+      <div class="id">Wormy ID: WMY-001238</div>
+      <div class="status">Aktív · Regisztrált</div>
+
+      <a class="btn" href="#">Használati útmutató</a>
+      <a class="btn" href="#">Wormy AI asszisztens</a>
+      <a class="btn" href="#">Garancia & szerviz</a>
+      <a class="btn" href="#">Kapcsolat</a>
+
+      <footer>
+        Ez nem egy tömegtermék. Ez a te eszközöd.
+      </footer>
+    </div>
+  </div>
+
+</body>
+</html>
