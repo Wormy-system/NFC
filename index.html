@@ -13,37 +13,26 @@
       --text: #e5e7eb;
     }
     * { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+<body>
+  <div class="bg-wrapper">
+    <img src="background.jpg" alt="Wormy background" />
+  </div>
 
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.55)
-    ),
-    url("background.jpg");
+  <div class="content">
+    <div class="card">
+      <h1>Ez a te Wormy-d</h1>
+      <div class="id">Wormy ID: WMY-001238</div>
+      <div class="status">Aktív · Regisztrált</div>
 
-  background-size: contain;        /* 🔑 nem zoomol */
-  background-position: center;
-  background-repeat: no-repeat;
+      <a class="btn" href="#">Használati útmutató</a>
+      <a class="btn" href="#">Wormy AI asszisztens</a>
+      <a class="btn" href="#">Garancia & szerviz</a>
+      <a class="btn" href="#">Kapcsolat</a>
 
-  background-color: #050505;       /* kitöltés a kép körül */
-
-  min-height: 100vh;
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: white;
-}
-    @media (min-width: 1200px) {
-  body {
-    background-position: center top;
-  }
-}
+      <footer>Ez nem egy tömegtermék. Ez a te eszközöd.</footer>
+    </div>
+  </div>
+</body>
     .card {
   background: rgba(0,0,0,0.55);
   backdrop-filter: blur(8px);
