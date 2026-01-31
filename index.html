@@ -18,18 +18,7 @@
     }
 
     /* =========================
-       HÁTTÉR – STABIL, MOBILBARÁT
-       ========================= */
-    body {
-  background-color: #050505;
-  background-image: url("background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; /* 🔑 EZ A KULCS */
-}
-
-    /* =========================
-       TARTALOM
+       TARTALOM ELRENDEZÉS
        ========================= */
     .content {
       min-height: 100vh;
@@ -107,7 +96,17 @@
   </style>
 </head>
 
-<body>
+<body
+  style="
+    background-color:#050505;
+    background-image:url('background.jpg');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    min-height:100vh;
+    margin:0;
+  "
+>
 
   <div class="content">
     <div class="card">
@@ -128,3 +127,4 @@
 
 </body>
 </html>
+
