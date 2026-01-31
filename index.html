@@ -13,21 +13,22 @@
       --text: #e5e7eb;
     }
     * { box-sizing: border-box; }
- body {
+body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Háttér: kép + overlay */
   background-image:
     linear-gradient(
-      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.55),
       rgba(0, 0, 0, 0.55)
     ),
     url("background.jpg");
 
-  background-size: cover;          /* kulcs: kitölti a képernyőt */
-  background-position: center;     /* mindig középre igazít */
-  background-repeat: no-repeat;    /* nincs csempézés */
+  background-size: contain;        /* 🔑 nem zoomol */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-color: #050505;       /* kitöltés a kép körül */
 
   min-height: 100vh;
   width: 100%;
@@ -38,7 +39,7 @@
 
   color: white;
 }
-@media (min-width: 1200px) {
+    @media (min-width: 1200px) {
   body {
     background-position: center top;
   }
