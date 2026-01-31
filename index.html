@@ -6,21 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    /* =========================
-       RESET
-       ========================= */
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
-      min-height: 100vh;
+      height: 100%;
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    /* =========================
-       TARTALOM ELRENDEZÉS
-       ========================= */
+    /* ===== TELJES OLDAL WRAPPER ===== */
+    .page {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ===== HÁTTÉR RÉTEG (ANDROID-BIZTOS) ===== */
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("background.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index: 0;
+    }
+
+    /* ===== TARTALOM ===== */
     .content {
+      position: relative;
+      z-index: 1;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -29,23 +45,18 @@
       box-sizing: border-box;
     }
 
-    /* =========================
-       PANEL – SÖTÉT, STABIL
-       ========================= */
+    /* ===== PANEL ===== */
     .card {
       background: #111;
       border-radius: 20px;
       padding: 28px;
       max-width: 380px;
       width: 100%;
-      color: #ffffff;
+      color: #fff;
       text-align: center;
       box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
 
-    /* =========================
-       SZÖVEGEK
-       ========================= */
     h1 {
       font-size: 22px;
       margin: 0 0 6px;
@@ -59,7 +70,7 @@
 
     .status {
       background: #19c37d;
-      color: #000000;
+      color: #000;
       padding: 6px 12px;
       border-radius: 999px;
       font-size: 13px;
@@ -67,16 +78,13 @@
       margin-bottom: 20px;
     }
 
-    /* =========================
-       GOMBOK
-       ========================= */
     .btn {
       display: block;
       margin: 10px 0;
       padding: 14px;
       border-radius: 12px;
       background: #222;
-      color: #ffffff;
+      color: #fff;
       text-decoration: none;
       font-weight: 600;
     }
@@ -85,48 +93,38 @@
       background: #333;
     }
 
-    /* =========================
-       FOOTER
-       ========================= */
     footer {
-    margin-top: 20px;
-    font-size: 12px;
-    opacity: 0.6;
-  }
-
-  /* ===== MOBIL OPTIMALIZÁLÁS ===== */
-  
+      margin-top: 20px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
   </style>
 </head>
 
-<body
-  style="
-    background-color:#050505;
-    background-image:url('background.jpg');
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:cover;
-    min-height:100vh;
-    margin:0;
-  "
->
+<body>
 
-  <div class="content">
-    <div class="card">
-      <h1>Ez a te Wormy-d</h1>
-      <div class="id">Wormy ID: WMY-001238</div>
-      <div class="status">Aktív · Regisztrált</div>
+  <div class="page">
+    <div class="content">
+      <div class="card">
+        <h1>Ez a te Wormy-d</h1>
+        <div class="id">Wormy ID: WMY-001238</div>
+        <div class="status">Aktív · Regisztrált</div>
 
-      <a class="btn" href="#">Használati útmutató</a>
-      <a class="btn" href="#">Wormy AI asszisztens</a>
-      <a class="btn" href="#">Garancia &amp; szerviz</a>
-      <a class="btn" href="#">Kapcsolat</a>
+        <a class="btn" href="#">Használati útmutató</a>
+        <a class="btn" href="#">Wormy AI asszisztens</a>
+        <a class="btn" href="#">Garancia &amp; szerviz</a>
+        <a class="btn" href="#">Kapcsolat</a>
 
-      <footer>
-        Ez nem egy tömegtermék. Ez a te eszközöd.
-      </footer>
+        <footer>
+          Ez nem egy tömegtermék. Ez a te eszközöd.
+        </footer>
+      </div>
     </div>
   </div>
+
+</body>
+</html>
+
 
 </body>
 </html>
