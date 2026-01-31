@@ -6,27 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
+    /* =========================================================
+       RESET
+       ========================================================= */
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
       height: 100%;
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-     }
+    }
 
-    /* ===== HÁTTÉRKÉP – STABIL, NEM NAGYÍT ===== */
+    /* =========================================================
+       DESKTOP HÁTTÉR (IMG-ALAPÚ, NEM NAGYÍT)
+       ========================================================= */
     .bg-image {
       position: fixed;
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;       /* NEM zoomol */
+      object-fit: contain;
       object-position: center;
       background-color: #050505;
       z-index: -1;
     }
 
-    /* ===== TARTALOM ===== */
+    /* =========================================================
+       TARTALOM
+       ========================================================= */
     .content {
       min-height: 100vh;
       display: flex;
@@ -34,19 +41,23 @@
       justify-content: center;
     }
 
-    /* ===== PANEL (NEM ÁTTETSZŐ) ===== */
+    /* =========================================================
+       PANEL – STABIL
+       ========================================================= */
     .card {
-      background: #111;          /* stabil, sötét panel */
+      background: #111;
       border-radius: 20px;
       padding: 28px;
       max-width: 380px;
       width: 90%;
-      color: white;
+      color: #ffffff;
       text-align: center;
       box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
 
-    /* ===== SZÖVEG ===== */
+    /* =========================================================
+       SZÖVEGEK
+       ========================================================= */
     h1 {
       font-size: 22px;
       margin-bottom: 6px;
@@ -60,7 +71,7 @@
 
     .status {
       background: #19c37d;
-      color: black;
+      color: #000000;
       padding: 6px 12px;
       border-radius: 999px;
       font-size: 13px;
@@ -68,14 +79,16 @@
       margin-bottom: 20px;
     }
 
-    /* ===== GOMBOK ===== */
+    /* =========================================================
+       GOMBOK
+       ========================================================= */
     .btn {
       display: block;
       margin: 10px 0;
       padding: 14px;
       border-radius: 12px;
       background: #222;
-      color: white;
+      color: #ffffff;
       text-decoration: none;
       font-weight: 600;
     }
@@ -84,36 +97,42 @@
       background: #333;
     }
 
-    /* ===== FOOTER ===== */
+    /* =========================================================
+       FOOTER
+       ========================================================= */
     footer {
       margin-top: 20px;
       font-size: 12px;
       opacity: 0.6;
     }
- /* ===== MOBIL FIX: háttér body-ra ===== */
-@media (max-width: 768px) {
 
-  /* desktopos img elrejtése mobilon */
-  .bg-image {
-    display: none;
-  }
+    /* =========================================================
+       MOBIL MEGOLDÁS – NFC-BIZTOS
+       ========================================================= */
+    @media (max-width: 768px) {
 
-  /* mobilon klasszikus háttér */
-  body {
-    background-image: url("background.jpg");
-    background-size: contain;      /* nem nagyít */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #050505;
-  }
-}
+      .bg-image {
+        display: none;
+      }
 
+      body {
+        background-color: #050505;
+        background-image: url("background.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
+      .card {
+        padding: 24px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- HÁTTÉRKÉP -->
+  <!-- DESKTOP HÁTTÉR -->
   <img class="bg-image" src="background.jpg" alt="Wormy háttér">
 
   <!-- TARTALOM -->
@@ -136,3 +155,4 @@
 
 </body>
 </html>
+
