@@ -12,16 +12,7 @@
       width: 100%;
       height: 100%;
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      .bg-image {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    background-color: #050505;
-    z-index: -1;
-    }
+     }
 
     /* ===== HÁTTÉRKÉP – STABIL, NEM NAGYÍT ===== */
     .bg-image {
@@ -99,6 +90,24 @@
       font-size: 12px;
       opacity: 0.6;
     }
+ /* ===== MOBIL FIX: háttér body-ra ===== */
+@media (max-width: 768px) {
+
+  /* desktopos img elrejtése mobilon */
+  .bg-image {
+    display: none;
+  }
+
+  /* mobilon klasszikus háttér */
+  body {
+    background-image: url("background.jpg");
+    background-size: contain;      /* nem nagyít */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #050505;
+  }
+}
+
   </style>
 </head>
 
