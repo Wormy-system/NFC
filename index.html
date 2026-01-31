@@ -109,22 +109,30 @@
     /* =========================================================
        MOBIL MEGOLDÁS – NFC-BIZTOS
        ========================================================= */
-    @media (max-width: 768px) {
+   @media (max-width: 768px) {
 
-      .bg-image {
-        display: none;
-      }
+  html, body {
+    min-height: 100vh;          /* 🔑 EZ HIÁNYZOTT */
+  }
 
-      body {
-        background-color: #050505;
-        background-image: url("background.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-      }
+  body {
+    background-color: #050505;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
 
-      .card {
-        padding: 24px;
+  .bg-image {
+    display: none;
+  }
+
+  .content {
+    min-height: 100vh;          /* 🔑 FONTOS */
+  }
+
+  .card {
+    padding: 24px;
       }
     }
   </style>
