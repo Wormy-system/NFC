@@ -34,15 +34,22 @@
   </div>
 </body>
     .card {
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.06); /* nagyon finom áttetszés */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 20px;
+  padding: 28px;
+  max-width: 380px;
+  width: 90%;
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+  color: white;
+  text-align: center;
 }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
     .logo {
       width: 44px;
       height: 44px;
