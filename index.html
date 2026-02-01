@@ -76,15 +76,18 @@ header img {
 /* STATUS PILL – INTEGRATED */
 .status-pill {
   position: absolute;
-  top: -10px;
+  top: -8px;
   left: 50%;
   transform: translateX(-50%);
 
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
 
-  padding: 6x 30px;
+  min-width: 220px;
+  padding: 4px 22px;
+
   background: linear-gradient(135deg, #1f8f62, #0f6b4a);
   color: #ffffff;
 
@@ -93,6 +96,7 @@ header img {
 
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.25);
+}
 }
 
 /* CHECK ICON */
@@ -172,6 +176,7 @@ header img {
 
   text-align: right;
   z-index: 10;
+}
  
   @media (min-width: 1024px) {
   .slogan {
