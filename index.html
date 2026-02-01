@@ -19,13 +19,15 @@
       background-image: url("background.jpg");
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: cover;
+      background-size: cover; /* mobil default */
     }
 
-    /* ===== DESKTOP BACKGROUND FINE TUNE ===== */
+    /* ===== DESKTOP BACKGROUND – NO ZOOM ===== */
     @media (min-width: 1024px) {
       html, body {
+        background-size: contain;   /* 🔑 NINCS nagyítás */
         background-position: center top;
+        background-color: #050505;  /* kitöltő háttér */
       }
     }
 
@@ -63,11 +65,11 @@
 
     /* ===== STATUS BAR ===== */
     .status-bar {
-      max-width: 240px;
+      max-width: 360px;
       margin: 0 auto 12px;
       padding: 9px 14px;
       border-radius: 10px;
-      background: #0f9d6a; /* sötétebb zöld */
+      background: #0f9d6a;
       color: #000;
       font-size: 13px;
       font-weight: 600;
@@ -118,7 +120,7 @@
       opacity: 0.6;
     }
 
-    /* ===== FOOTER SLOGAN ===== */
+    /* ===== FOOTER ===== */
     .slogan {
       margin: 28px 0 22px;
       text-align: center;
@@ -131,54 +133,32 @@
 
 <body>
 
-  <!-- HEADER -->
   <header>
     <img src="company-logo.png" alt="Company logo">
   </header>
 
-  <!-- PRODUCT LOGO -->
   <section class="product-hero">
     <img src="product-logo.jpg" alt="Wormy">
   </section>
 
-  <!-- STATUS -->
   <div class="status-bar">
     Identified · Active
   </div>
 
-  <!-- PRODUCT INFO -->
   <div class="product-info">
     <span class="dim">Model:</span> Wormy – Black Range System<br>
     <span class="dim">Production year:</span> 2026<br>
     <span class="dim">Card serial:</span> <span id="card-serial">Not linked</span>
   </div>
 
-  <!-- MODULES -->
   <section class="modules">
-
-    <a class="module" href="https://wor.my">
-      Wormy page
-    </a>
-
-    <a class="module" href="https://wormy.glide.page">
-      FishPin
-    </a>
-
-    <a class="module" href="https://wormy.ai">
-      Wormy AI assistant
-    </a>
-
-    <a class="module" id="warranty-link">
-      Warranty activation
-    </a>
-
-    <a class="module" href="contact.html">
-      Contact
-    </a>
-
+    <a class="module" href="https://wor.my">Wormy page</a>
+    <a class="module" href="https://wormy.glide.page">FishPin</a>
+    <a class="module" href="https://wormy.ai">Wormy AI assistant</a>
+    <a class="module" id="warranty-link">Warranty activation</a>
+    <a class="module" href="contact.html">Contact</a>
   </section>
 
-  <!-- SLOGAN -->
   <div class="slogan">
     ONE system. Your Wormy.
   </div>
