@@ -1,187 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Wormy System</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Wormy System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    /* ===== BASE ===== */
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      min-height: 100vh;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #ffffff;
+<style>
+/* ===== BASE ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #ffffff;
 
-      background-color: #050505;
-      background-image: url("background.jpg");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover; /* mobil default */
-    }
+  background-color: #050505;
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
 
-    /* ===== DESKTOP BACKGROUND – NO ZOOM ===== */
-    @media (min-width: 1024px) {
-      html, body {
-        background-size: contain;   /* 🔑 NINCS nagyítás */
-        background-position: center top;
-        background-color: #050505;  /* kitöltő háttér */
-      }
-    }
+/* ===== HEADER ===== */
+header {
+  height: 56px;
+  position: relative;
+}
+header img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 22px;
+  opacity: 0.85;
+}
 
-    /* ===== HEADER (FIX CENTER) ===== */
-    header {
-      height: 56px;
-      width: 100%;
-      position: relative;
-    }
+/* ===== PRODUCT HERO ===== */
+.product-hero {
+  height: 26vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-hero img {
+  width: 70%;
+  max-width: 300px;
+  opacity: 0.65;
+}
 
-    header img {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      height: 22px;
-      width: auto;
-      opacity: 0.85;
-      display: block;
-    }
+/* ===== STATUS BADGE ===== */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 
-    /* ===== PRODUCT LOGO ===== */
-    .product-hero {
-      height: 26vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  margin: 0 auto 14px;
+  padding: 8px 22px;
 
-    .product-hero img {
-      width: 70%;
-      max-width: 300px;
-      opacity: 0.65;
-    }
+  background: linear-gradient(135deg, #1e8f63, #0f6b4a);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
 
-    /* ===== STATUS BAR ===== */
-    .status-bar {
-      max-width: 360px;
-      margin: 0 auto 12px;
-      padding: 9px 14px;
-      border-radius: 10px;
-      background: #0f9d6a;
-      color: #000;
-      font-size: 13px;
-      font-weight: 600;
-      text-align: center;
-    }
+  border-radius: 999px;
+  max-width: fit-content;
+}
 
-    /* ===== PRODUCT INFO ===== */
-    .product-info {
-      max-width: 420px;
-      margin: 0 auto 16px;
-      padding: 14px 16px;
-      background: rgba(15, 15, 15, 0.85);
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.06);
-      font-size: 13px;
-      line-height: 1.5;
-      text-align: center;
-    }
+/* ===== PRODUCT INFO ===== */
+.product-info {
+  max-width: 420px;
+  margin: 0 auto 20px;
+  padding: 14px 16px;
+  text-align: center;
 
-    .product-info .dim {
-      opacity: 0.6;
-    }
+  background: rgba(15,15,15,0.75);
+  backdrop-filter: blur(6px);
 
-    /* ===== MODULE LIST ===== */
-    .modules {
-      max-width: 420px;
-      margin: 0 auto;
-      padding: 4px 16px;
-    }
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
 
-    .module {
-      display: block;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      text-decoration: none;
-      color: #ffffff;
-      text-align: center;
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.2px;
-    }
+  font-size: 13px;
+  line-height: 1.6;
+}
+.product-info .dim {
+  opacity: 0.6;
+}
 
-    .module:last-child {
-      border-bottom: none;
-    }
+/* ===== MODULE GRID ===== */
+.modules {
+  max-width: 420px;
+  margin: 0 auto 26px;
+  padding: 0 16px;
 
-    .module:active {
-      opacity: 0.6;
-    }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
 
-    /* ===== FOOTER ===== */
-    .slogan {
-      margin: 28px 0 22px;
-      text-align: center;
-      font-size: 12px;
-      opacity: 0.6;
-      letter-spacing: 0.6px;
-    }
-  </style>
+.module {
+  padding: 18px 12px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+
+  background: rgba(20,20,20,0.7);
+  backdrop-filter: blur(8px);
+
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+
+  font-size: 14px;
+  font-weight: 500;
+}
+.module:active {
+  opacity: 0.7;
+}
+
+/* ===== SINGLE MODULE (BOTTOM) ===== */
+.module-wide {
+  grid-column: span 2;
+}
+
+/* ===== FOOTER ===== */
+.slogan {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.6;
+  letter-spacing: 0.6px;
+  margin-bottom: 22px;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <img src="company-logo.png" alt="Company logo">
-  </header>
+<header>
+  <img src="company-logo.png" alt="Company logo">
+</header>
 
-  <section class="product-hero">
-    <img src="product-logo.jpg" alt="Wormy">
-  </section>
+<section class="product-hero">
+  <img src="product-logo.jpg" alt="Wormy">
+</section>
 
-  <div class="status-bar">
-    Identified · Active
-  </div>
+<div class="status-pill">
+  ● Identified · Active
+</div>
 
-  <div class="product-info">
-    <span class="dim">Model:</span> Wormy – Black Range System<br>
-    <span class="dim">Production year:</span> 2026<br>
-    <span class="dim">Card serial:</span> <span id="card-serial">Not linked</span>
-  </div>
+<div class="product-info">
+  <span class="dim">Model:</span> Wormy – Black Range System<br>
+  <span class="dim">Production year:</span> 2026<br>
+  <span class="dim">Card serial:</span> <span id="card-serial">UNKNOWN</span>
+</div>
 
-  <section class="modules">
-    <a class="module" href="https://wor.my">Wormy page</a>
-    <a class="module" href="https://wormy.glide.page">FishPin</a>
-    <a class="module" href="https://wormy.ai">Wormy AI assistant</a>
-    <a class="module" id="warranty-link">Warranty activation</a>
-    <a class="module" href="contact.html">Contact</a>
-  </section>
+<section class="modules">
+  <a class="module" href="https://wor.my">Wormy Page</a>
+  <a class="module" href="https://wormy.glide.page">FishPin</a>
+  <a class="module" href="https://wormy.ai">Wormy AI</a>
+  <a class="module" id="warranty-link">Warranty</a>
+  <a class="module module-wide" href="contact.html">Contact & Support</a>
+</section>
 
-  <div class="slogan">
-    ONE system. Your Wormy.
-  </div>
+<div class="slogan">
+  ONE system. Your Wormy.
+</div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const card = params.get("card") || "UNKNOWN";
-    document.getElementById("card-serial").textContent = card;
+<script>
+const params = new URLSearchParams(window.location.search);
+const card = params.get("card") || "UNKNOWN";
+document.getElementById("card-serial").textContent = card;
 
-    const subject = encodeURIComponent("Wormy warranty activation");
-    const body = encodeURIComponent(
-`Hello Wormy Team,
-
-I would like to activate the warranty for my Wormy product.
-
-Card serial: ${card}
-
-Thank you.`
-    );
-
-    document.getElementById("warranty-link").href =
-      `mailto:join@wor.my?subject=${subject}&body=${body}`;
-  </script>
+document.getElementById("warranty-link").href =
+  `mailto:join@wor.my?subject=Wormy warranty activation&body=Card serial: ${card}`;
+</script>
 
 </body>
 </html>
