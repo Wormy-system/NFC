@@ -6,39 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
+    /* ===== BASE ===== */
     html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #ffffff;
 
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #ffffff;
-
-  /* BACKGROUND */
-  background-color: #050505;
-  background-image: url("background.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
+      background-color: #050505;
+      background-image: url("background.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
     }
 
+    /* ===== HEADER (FIX CENTER) ===== */
     header {
-  height: 56px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
+      height: 56px;
+      width: 100%;
+      position: relative; /* 🔑 */
     }
-header img {
-  display: block;
-  height: 22px;
-  margin: 0 auto;
-  opacity: 0.85;
-   }
 
+    header img {
+      position: absolute; /* 🔑 */
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      height: 22px;        /* FIX MÉRET */
+      max-height: 22px;
+      width: auto;
+
+      opacity: 0.85;
+      display: block;
+    }
+
+    /* ===== PRODUCT LOGO ===== */
     .product-hero {
       height: 26vh;
       display: flex;
@@ -52,6 +57,7 @@ header img {
       opacity: 0.65;
     }
 
+    /* ===== STATUS BAR ===== */
     .status-bar {
       max-width: 420px;
       margin: 0 auto 10px;
@@ -64,11 +70,12 @@ header img {
       text-align: center;
     }
 
+    /* ===== PRODUCT INFO ===== */
     .product-info {
       max-width: 420px;
       margin: 0 auto 14px;
       padding: 14px 16px;
-      background: #0f0f0f;
+      background: rgba(15, 15, 15, 0.85);
       border-radius: 12px;
       border: 1px solid rgba(255,255,255,0.06);
       font-size: 13px;
@@ -79,6 +86,7 @@ header img {
       opacity: 0.6;
     }
 
+    /* ===== MODULE LIST ===== */
     .modules {
       max-width: 420px;
       margin: 0 auto;
@@ -117,6 +125,7 @@ header img {
       opacity: 0.6;
     }
 
+    /* ===== FOOTER SLOGAN ===== */
     .slogan {
       margin: 28px 0 22px;
       text-align: center;
@@ -129,24 +138,29 @@ header img {
 
 <body>
 
+  <!-- HEADER -->
   <header>
     <img src="company-logo.png" alt="Company logo">
   </header>
 
+  <!-- PRODUCT LOGO -->
   <section class="product-hero">
     <img src="product-logo.jpg" alt="Wormy">
   </section>
 
+  <!-- STATUS -->
   <div class="status-bar">
     Identified · Active
   </div>
 
+  <!-- PRODUCT INFO -->
   <div class="product-info">
     <span class="dim">Model:</span> Wormy – Black Range System<br>
     <span class="dim">Production year:</span> 2026<br>
     <span class="dim">Card serial:</span> <span id="card-serial">Not linked</span>
   </div>
 
+  <!-- MODULES -->
   <section class="modules">
 
     <a class="module" href="https://wor.my">
@@ -176,6 +190,7 @@ header img {
 
   </section>
 
+  <!-- SLOGAN -->
   <div class="slogan">
     ONE system. Your Wormy.
   </div>
