@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact – Wormy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #050505;
+      color: #ffffff;
+    }
+
+    header {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header img {
+      height: 22px;
+      opacity: 0.85;
+    }
+
+    .content {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 4px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .item:last-child {
+      border-bottom: none;
+    }
+
+    .icon {
+      font-size: 18px;
+      width: 24px;
+      opacity: 0.75;
+      text-align: center;
+    }
+
+    .label {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="company-logo.png" alt="Company logo">
+  </header>
+
+  <div class="content">
+
+    <a class="item" href="tel:+36309086515">
+      <div class="icon">📞</div>
+      <div class="label">Call / WhatsApp / SMS</div>
+    </a>
+
+    <a class="item" href="mailto:help@wor.my">
+      <div class="icon">🎧</div>
+      <div class="label">Customer support</div>
+    </a>
+
+    <a class="item" href="mailto:mail@wor.my">
+      <div class="icon">✉️</div>
+      <div class="label">General contact</div>
+    </a>
+
+  </div>
+
+</body>
+</html>
+
