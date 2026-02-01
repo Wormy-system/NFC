@@ -157,19 +157,9 @@
       <div class="module-label">Warranty activation</div>
     </a>
 
-    <a class="module" href="mailto:help@wor.my">
-      <div class="module-icon">🎧</div>
-      <div class="module-label">Customer support</div>
-    </a>
-
-    <a class="module" href="mailto:mail@wor.my">
+    <a class="module" href="contact.html">
       <div class="module-icon">✉️</div>
-      <div class="module-label">General contact</div>
-    </a>
-
-    <a class="module" href="tel:+36309086515">
-      <div class="module-icon">📞</div>
-      <div class="module-label">Call / WhatsApp / SMS</div>
+      <div class="module-label">Contact</div>
     </a>
 
   </section>
@@ -181,14 +171,13 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const card = params.get("card") || "UNKNOWN";
-
     document.getElementById("card-serial").textContent = card;
 
     const subject = encodeURIComponent("Wormy warranty activation");
     const body = encodeURIComponent(
 `Hello Wormy Team,
 
-Please send your card number via email.
+I would like to activate the warranty for my Wormy product.
 
 Card serial: ${card}
 
