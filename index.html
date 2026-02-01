@@ -22,23 +22,27 @@
       background-size: cover;
     }
 
+    /* ===== DESKTOP BACKGROUND FINE TUNE ===== */
+    @media (min-width: 1024px) {
+      html, body {
+        background-position: center top;
+      }
+    }
+
     /* ===== HEADER (FIX CENTER) ===== */
     header {
       height: 56px;
       width: 100%;
-      position: relative; /* 🔑 */
+      position: relative;
     }
 
     header img {
-      position: absolute; /* 🔑 */
+      position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-
-      height: 22px;        /* FIX MÉRET */
-      max-height: 22px;
+      height: 22px;
       width: auto;
-
       opacity: 0.85;
       display: block;
     }
@@ -59,11 +63,11 @@
 
     /* ===== STATUS BAR ===== */
     .status-bar {
-      max-width: 420px;
-      margin: 0 auto 10px;
-      padding: 10px 14px;
+      max-width: 360px;
+      margin: 0 auto 12px;
+      padding: 9px 14px;
       border-radius: 10px;
-      background: #19c37d;
+      background: #0f9d6a; /* sötétebb zöld */
       color: #000;
       font-size: 13px;
       font-weight: 600;
@@ -73,13 +77,14 @@
     /* ===== PRODUCT INFO ===== */
     .product-info {
       max-width: 420px;
-      margin: 0 auto 14px;
+      margin: 0 auto 16px;
       padding: 14px 16px;
       background: rgba(15, 15, 15, 0.85);
       border-radius: 12px;
       border: 1px solid rgba(255,255,255,0.06);
       font-size: 13px;
       line-height: 1.5;
+      text-align: center;
     }
 
     .product-info .dim {
@@ -94,31 +99,19 @@
     }
 
     .module {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 4px;
+      display: block;
+      padding: 14px 0;
       border-bottom: 1px solid rgba(255,255,255,0.06);
       text-decoration: none;
       color: #ffffff;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
     }
 
     .module:last-child {
       border-bottom: none;
-    }
-
-    .module-icon {
-      font-size: 18px;
-      width: 24px;
-      text-align: center;
-      opacity: 0.75;
-      flex-shrink: 0;
-    }
-
-    .module-label {
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.2px;
     }
 
     .module:active {
@@ -164,28 +157,23 @@
   <section class="modules">
 
     <a class="module" href="https://wor.my">
-      <div class="module-icon">ℹ️</div>
-      <div class="module-label">Wormy page</div>
+      Wormy page
     </a>
 
     <a class="module" href="https://wormy.glide.page">
-      <div class="module-icon">🎣</div>
-      <div class="module-label">FishPin</div>
+      FishPin
     </a>
 
     <a class="module" href="https://wormy.ai">
-      <div class="module-icon">💬</div>
-      <div class="module-label">Wormy AI assistant</div>
+      Wormy AI assistant
     </a>
 
     <a class="module" id="warranty-link">
-      <div class="module-icon">🛠</div>
-      <div class="module-label">Warranty activation</div>
+      Warranty activation
     </a>
 
     <a class="module" href="contact.html">
-      <div class="module-icon">✉️</div>
-      <div class="module-label">Contact</div>
+      Contact
     </a>
 
   </section>
