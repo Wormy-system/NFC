@@ -31,7 +31,7 @@
 
     /* ===== PRODUCT LOGO ===== */
     .product-hero {
-      height: 28vh;
+      height: 26vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -43,7 +43,40 @@
       opacity: 0.65;
     }
 
-    /* ===== MODULE LIST (SYSTEM STYLE) ===== */
+    /* ===== STATUS BAR ===== */
+    .status-bar {
+      max-width: 420px;
+      margin: 0 auto 10px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #19c37d;
+      color: #000;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* ===== PRODUCT INFO PANEL ===== */
+    .product-info {
+      max-width: 420px;
+      margin: 0 auto 14px;
+      padding: 14px 16px;
+      background: #0f0f0f;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .product-info strong {
+      font-weight: 600;
+    }
+
+    .product-info .dim {
+      opacity: 0.6;
+    }
+
+    /* ===== MODULE LIST ===== */
     .modules {
       max-width: 420px;
       margin: 0 auto;
@@ -54,10 +87,8 @@
       display: flex;
       align-items: center;
       gap: 14px;
-
       padding: 14px 4px;
       border-bottom: 1px solid rgba(255,255,255,0.06);
-
       text-decoration: none;
       color: #ffffff;
     }
@@ -106,6 +137,18 @@
   <section class="product-hero">
     <img src="product-logo.jpg" alt="Wormy">
   </section>
+
+  <!-- STATUS -->
+  <div class="status-bar">
+    Identified · Active
+  </div>
+
+  <!-- PRODUCT INFO -->
+  <div class="product-info">
+    <strong>Wormy – Black Range System</strong><br>
+    <span class="dim">Production year:</span> 2026<br>
+    <span class="dim">Card serial:</span> WRM-000124
+  </div>
 
   <!-- MODULE LIST -->
   <section class="modules">
