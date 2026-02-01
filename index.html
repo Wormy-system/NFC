@@ -12,14 +12,24 @@ html, body {
   padding: 0;
   width: 100%;
   min-height: 100vh;
+
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: #ffffff;
 
   background-color: #050505;
   background-image: url("background.jpg");
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background-position: center top;
+  background-size: cover; /* mobil default */
+}
+
+/* DESKTOP: NINCS ZOOM */
+@media (min-width: 1024px) {
+  html, body {
+    background-size: contain;
+    background-position: center top;
+    background-color: #050505;
+  }
 }
 
 /* ===== HEADER ===== */
