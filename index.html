@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    /* ===== BASE ===== */
     html, body {
       margin: 0;
       padding: 0;
@@ -16,7 +15,6 @@
       color: #ffffff;
     }
 
-    /* ===== HEADER ===== */
     header {
       height: 56px;
       display: flex;
@@ -29,7 +27,6 @@
       opacity: 0.85;
     }
 
-    /* ===== PRODUCT LOGO ===== */
     .product-hero {
       height: 26vh;
       display: flex;
@@ -43,7 +40,6 @@
       opacity: 0.65;
     }
 
-    /* ===== STATUS BAR ===== */
     .status-bar {
       max-width: 420px;
       margin: 0 auto 10px;
@@ -56,7 +52,6 @@
       text-align: center;
     }
 
-    /* ===== PRODUCT INFO PANEL ===== */
     .product-info {
       max-width: 420px;
       margin: 0 auto 14px;
@@ -72,7 +67,6 @@
       opacity: 0.6;
     }
 
-    /* ===== MODULE LIST ===== */
     .modules {
       max-width: 420px;
       margin: 0 auto;
@@ -111,7 +105,6 @@
       opacity: 0.6;
     }
 
-    /* ===== FOOTER SLOGAN ===== */
     .slogan {
       margin: 28px 0 22px;
       text-align: center;
@@ -124,29 +117,24 @@
 
 <body>
 
-  <!-- HEADER -->
   <header>
     <img src="company-logo.png" alt="Company logo">
   </header>
 
-  <!-- PRODUCT LOGO -->
   <section class="product-hero">
     <img src="product-logo.jpg" alt="Wormy">
   </section>
 
-  <!-- STATUS -->
   <div class="status-bar">
     Identified · Active
   </div>
 
-  <!-- PRODUCT INFO -->
   <div class="product-info">
     <span class="dim">Model:</span> Wormy – Black Range System<br>
     <span class="dim">Production year:</span> 2026<br>
     <span class="dim">Card serial:</span> <span id="card-serial">Not linked</span>
   </div>
 
-  <!-- MODULE LIST -->
   <section class="modules">
 
     <a class="module" href="https://wor.my">
@@ -164,31 +152,51 @@
       <div class="module-label">Wormy AI assistant</div>
     </a>
 
-    <a class="module" href="#">
+    <a class="module" id="warranty-link">
       <div class="module-icon">🛠</div>
-      <div class="module-label">Warranty & Service</div>
+      <div class="module-label">Warranty activation</div>
     </a>
 
-    <a class="module" href="#">
+    <a class="module" href="mailto:help@wor.my">
+      <div class="module-icon">🎧</div>
+      <div class="module-label">Customer support</div>
+    </a>
+
+    <a class="module" href="mailto:mail@wor.my">
       <div class="module-icon">✉️</div>
-      <div class="module-label">Contact</div>
+      <div class="module-label">General contact</div>
+    </a>
+
+    <a class="module" href="tel:+36309086515">
+      <div class="module-icon">📞</div>
+      <div class="module-label">Call / WhatsApp / SMS</div>
     </a>
 
   </section>
 
-  <!-- SLOGAN -->
   <div class="slogan">
     ONE system. Your Wormy.
   </div>
 
-  <!-- SERIAL SCRIPT -->
   <script>
     const params = new URLSearchParams(window.location.search);
-    const card = params.get("card");
+    const card = params.get("card") || "UNKNOWN";
 
-    if (card) {
-      document.getElementById("card-serial").textContent = card;
-    }
+    document.getElementById("card-serial").textContent = card;
+
+    const subject = encodeURIComponent("Wormy warranty activation");
+    const body = encodeURIComponent(
+`Hello Wormy Team,
+
+Please send your card number via email.
+
+Card serial: ${card}
+
+Thank you.`
+    );
+
+    document.getElementById("warranty-link").href =
+      `mailto:join@wor.my?subject=${subject}&body=${body}`;
   </script>
 
 </body>
