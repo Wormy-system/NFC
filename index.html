@@ -31,7 +31,7 @@
 
     /* ===== PRODUCT LOGO ===== */
     .product-hero {
-      height: 30vh;
+      height: 28vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -43,37 +43,45 @@
       opacity: 0.65;
     }
 
-    /* ===== MODULE LIST ===== */
+    /* ===== MODULE LIST (SYSTEM STYLE) ===== */
     .modules {
       max-width: 420px;
       margin: 0 auto;
-      padding: 8px 16px;
+      padding: 4px 16px;
     }
 
     .module {
       display: flex;
       align-items: center;
       gap: 14px;
-      padding: 16px;
-      margin-bottom: 12px;
 
-      background: #111;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.06);
+      padding: 14px 4px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .module:last-child {
+      border-bottom: none;
     }
 
     .module-icon {
-      font-size: 20px;
-      width: 28px;
+      font-size: 18px;
+      width: 24px;
       text-align: center;
-      opacity: 0.85;
+      opacity: 0.75;
       flex-shrink: 0;
     }
 
     .module-label {
       font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+
+    .module:active {
+      opacity: 0.6;
     }
 
     /* ===== FOOTER SLOGAN ===== */
@@ -102,25 +110,25 @@
   <!-- MODULE LIST -->
   <section class="modules">
 
-    <div class="module">
-      <div class="module-icon">🖼</div>
-      <div class="module-label">Gallery</div>
-    </div>
+    <a class="module" href="https://wormy.glide.page">
+      <div class="module-icon">🎣</div>
+      <div class="module-label">FishPin</div>
+    </a>
 
-    <div class="module">
+    <a class="module" href="https://wormy.ai">
       <div class="module-icon">💬</div>
       <div class="module-label">Ask Wormy</div>
-    </div>
+    </a>
 
-    <div class="module">
+    <a class="module" href="#">
       <div class="module-icon">🛠</div>
       <div class="module-label">Warranty & Service</div>
-    </div>
+    </a>
 
-    <div class="module">
+    <a class="module" href="#">
       <div class="module-icon">ℹ️</div>
       <div class="module-label">Product Info</div>
-    </div>
+    </a>
 
   </section>
 
