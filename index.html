@@ -68,10 +68,6 @@
       line-height: 1.5;
     }
 
-    .product-info strong {
-      font-weight: 600;
-    }
-
     .product-info .dim {
       opacity: 0.6;
     }
@@ -145,19 +141,19 @@
 
   <!-- PRODUCT INFO -->
   <div class="product-info">
-    <span class="dim">Modell:</span> Wormy – Black Range System<br>
+    <span class="dim">Model:</span> Wormy – Black Range System<br>
     <span class="dim">Production year:</span> 2026<br>
-    <span class="dim">Card serial:</span> WRM-000124
+    <span class="dim">Card serial:</span> <span id="card-serial">Not linked</span>
   </div>
 
   <!-- MODULE LIST -->
   <section class="modules">
 
-     <a class="module" href="https://wor.my">
+    <a class="module" href="https://wor.my">
       <div class="module-icon">ℹ️</div>
       <div class="module-label">Wormy page</div>
     </a>
-    
+
     <a class="module" href="https://wormy.glide.page">
       <div class="module-icon">🎣</div>
       <div class="module-label">FishPin</div>
@@ -173,8 +169,8 @@
       <div class="module-label">Warranty & Service</div>
     </a>
 
-   <a class="module" href="#">
-      <div class="module-icon">💬</div>
+    <a class="module" href="#">
+      <div class="module-icon">✉️</div>
       <div class="module-label">Contact</div>
     </a>
 
@@ -184,6 +180,16 @@
   <div class="slogan">
     ONE system. Your Wormy.
   </div>
+
+  <!-- SERIAL SCRIPT -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const card = params.get("card");
+
+    if (card) {
+      document.getElementById("card-serial").textContent = card;
+    }
+  </script>
 
 </body>
 </html>
