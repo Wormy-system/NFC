@@ -46,46 +46,71 @@ header img {
 .product-hero img {
   width: 70%;
   max-width: 300px;
-  opacity: 0.65;
+  opacity: 0.45;
 }
 
-/* ===== STATUS BADGE ===== */
+/* ===== INFO PANEL (GLASS) ===== */
+.info-panel {
+  max-width: 420px;
+  margin: 0 auto 26px;
+  padding: 30px 20px 18px;
+  position: relative;
+
+  background: rgba(20,20,20,0.45);
+  backdrop-filter: blur(10px);
+
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* STATUS PILL – INTEGRATED */
 .status-pill {
-  display: inline-flex;
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
 
-  margin: 0 auto 14px;
-  padding: 8px 22px;
-
-  background: linear-gradient(135deg, #1e8f63, #0f6b4a);
+  padding: 6px 18px;
+  background: linear-gradient(135deg, #1f8f62, #0f6b4a);
   color: #ffffff;
+
   font-size: 13px;
   font-weight: 600;
 
   border-radius: 999px;
-  max-width: fit-content;
+  border: 1px solid rgba(255,255,255,0.25);
 }
 
-/* ===== PRODUCT INFO ===== */
-.product-info {
-  max-width: 420px;
-  margin: 0 auto 20px;
-  padding: 14px 16px;
-  text-align: center;
+/* CHECK ICON */
+.status-pill .check {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  background: rgba(15,15,15,0.75);
-  backdrop-filter: blur(6px);
+  border-radius: 4px;
+  background: rgba(255,255,255,0.15);
+  font-size: 12px;
+}
 
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.08);
-
+/* INFO ROWS */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
   font-size: 13px;
-  line-height: 1.6;
+  letter-spacing: 0.2px;
 }
-.product-info .dim {
+.info-row span:first-child {
   opacity: 0.6;
+}
+.info-row + .info-row {
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 /* ===== MODULE GRID ===== */
@@ -105,11 +130,11 @@ header img {
   text-decoration: none;
   color: #ffffff;
 
-  background: rgba(20,20,20,0.7);
-  backdrop-filter: blur(8px);
+  background: rgba(20,20,20,0.45);
+  backdrop-filter: blur(10px);
 
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
 
   font-size: 14px;
   font-weight: 500;
@@ -118,7 +143,6 @@ header img {
   opacity: 0.7;
 }
 
-/* ===== SINGLE MODULE (BOTTOM) ===== */
 .module-wide {
   grid-column: span 2;
 }
@@ -144,14 +168,28 @@ header img {
   <img src="product-logo.jpg" alt="Wormy">
 </section>
 
-<div class="status-pill">
-  ● Identified · Active
-</div>
+<div class="info-panel">
 
-<div class="product-info">
-  <span class="dim">Model:</span> Wormy – Black Range System<br>
-  <span class="dim">Production year:</span> 2026<br>
-  <span class="dim">Card serial:</span> <span id="card-serial">UNKNOWN</span>
+  <div class="status-pill">
+    <span class="check">✓</span>
+    Identified · Active
+  </div>
+
+  <div class="info-row">
+    <span>Model</span>
+    <span>Wormy – Black Range System</span>
+  </div>
+
+  <div class="info-row">
+    <span>Production year</span>
+    <span>2026</span>
+  </div>
+
+  <div class="info-row">
+    <span>Card serial</span>
+    <span id="card-serial">UNKNOWN</span>
+  </div>
+
 </div>
 
 <section class="modules">
