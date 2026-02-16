@@ -261,11 +261,27 @@ padding: 6px 10px;
 <script>
 const params = new URLSearchParams(window.location.search);
 const card = params.get("card") || "UNKNOWN";
+
+// Kártyaszám megjelenítése az oldalon
 document.getElementById("card-serial").textContent = card;
 
-document.getElementById("warranty-link").href =
-  `mailto:join@wor.my?subject=Wormy warranty activation&body=Card serial: ${card}`;
-</script>
+// Email subject és body
+const subject = encodeURIComponent("Wormy Warranty Activation");
 
-</body>
-</html>
+const body = encodeURIComponent(
+`Hello Wormy Team,
+
+I would like to activate the warranty for my Wormy product.
+
+Card serial number: ${card}
+
+Thank you,
+Sent via Wormy NFC`
+);
+
+// Mailto összeállítás
+const mailtoLink = `mailto:join@wor.my?subject=${subject}&body=${body}`;
+
+// Warranty gombra ráültetés
+document.getElementById("warranty-link").href = mailtoLink;
+</script>
