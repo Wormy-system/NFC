@@ -6,268 +6,222 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-/* ===== BASE ===== */
 html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
-
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #ffffff;
-
-  background-color: #050505;
-  background-image: url("background.jpg");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover; /* mobil default */
+  margin:0;
+  padding:0;
+  width:100%;
+  min-height:100vh;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+  color:#ffffff;
+  background-color:#050505;
+  background-image:url("background.jpg");
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-size:cover;
 }
 
-/* DESKTOP: NINCS ZOOM */
-@media (min-width: 1024px) {
-  html, body {
-    background-size: contain;
-    background-position: center top;
-    background-color: #050505;
-  }
-}
-/* MOBIL FINOMHANGOLÁS */
-@media (max-width: 768px) {
-  html, body {
-    background-size: cover;
-    background-position: center 15%;
+/* desktop */
+@media (min-width:1024px){
+  html, body{
+    background-size:contain;
+    background-position:center top;
+    background-color:#050505;
   }
 }
 
-/* ===== HEADER ===== */
-header {
-  height: 56px;
-  position: relative;
-}
-header img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  height: 22px;
-  opacity: 1;
-}
-
-/* ===== PRODUCT HERO ===== */
-.product-hero {
-  height: 26vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.product-hero img {
-  width: 70%;
-  max-width: 300px;
-  opacity: 0.85;
-}
-
-/* ===== INFO PANEL (GLASS) ===== */
-.info-panel {
-  max-width: 350px;
-  margin: 60px auto 28px;
-  padding: 18px 12px 10px;
-  position: relative;
-
-  background: rgba(20,20,20,0.06);
-  backdrop-filter: blur(4px);
-
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.15);
-}
-
-/* STATUS PILL – INTEGRATED */
-.status-pill {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-
-  min-width: 200px;
-  padding: 4px 16px;
-
-  background: linear-gradient(135deg, #1f8f62, #0f6b4a);
-  color: #ffffff;
-
-  font-size: 12px;
-  font-weight: 600;
-
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.25);
-}
-}
-
-/* CHECK ICON */
-.status-pill .check {
-  width: 18px;
-  height: 18px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 4px;
-  background: rgba(255,255,255,0.12);
-  font-size: 12px;
-}
-
-/* INFO ROWS */
-.info-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  font-size: 13px;
-  letter-spacing: 0.2px;
-}
-.info-row span:first-child {
-  opacity: 0.6;
-}
-.info-row + .info-row {
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-/* ===== MODULE GRID ===== */
-.modules {
-  max-width: 350px;
-  margin: 45px auto 26px;
-  padding: 0 16px;
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-}
-
-.module {
-  padding: 8px 12px;
-  text-align: center;
-  text-decoration: none;
-  color: #ffffff;
-
-  background: rgba(20,20,20,0.12);
-  backdrop-filter: blur(2px);
-
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.12);
-
-  font-size: 14px;
-  font-weight: 500;
-}
-.module:active {
-  opacity: 0.7;
-}
-
-.module-wide {
-  grid-column: span 2;
-}
-
-/* ===== FOOTER ===== */
-.slogan {
-  position: fixed;
-  right: 18px;
-  bottom: 16px;
-
-  font-size: 14px;
-  font-weight: 800;        /* 🔑 vastagítás */
-  letter-spacing: 0.8px;
-
-  color: #ff4d4d;
-  opacity: 0.9;
-
-  text-align: right;
-  z-index: 10;
-  
-padding: 6px 10px;
- 
-  display: none;
-}
-
-  .slogan::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(6px);
-
-  border-radius: 6px;
-  z-index: -1;
-   }
-
-  @media (min-width: 1024px) {
-  .slogan {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    text-align: center;
+/* mobile */
+@media (max-width:768px){
+  html, body{
+    background-size:cover;
+    background-position:center 15%;
   }
 }
+
+/* header */
+header{
+  height:56px;
+  position:relative;
+}
+header img{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  height:22px;
+  opacity:1;
+}
+
+/* product */
+.product-hero{
+  height:26vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.product-hero img{
+  width:70%;
+  max-width:300px;
+  opacity:0.9;
+}
+
+/* welcome */
+.welcome{
+  text-align:center;
+  margin-top:-8px;
+  margin-bottom:12px;
+  font-size:14px;
+  opacity:0.75;
+}
+
+/* info panel */
+.info-panel{
+  max-width:350px;
+  margin:60px auto 28px;
+  padding:18px 12px 10px;
+  position:relative;
+  background:rgba(20,20,20,0.06);
+  backdrop-filter:blur(4px);
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.15);
+}
+
+/* status pill */
+.status-pill{
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-width:200px;
+  padding:4px 16px;
+  background:linear-gradient(135deg,#1f8f62,#0f6b4a);
+  color:#fff;
+  font-size:12px;
+  font-weight:600;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.25);
+}
+
+.status-pill .check{
+  width:18px;
+  height:18px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:4px;
+  background:rgba(255,255,255,0.12);
+  font-size:12px;
+}
+
+/* rows */
+.info-row{
+  display:flex;
+  justify-content:space-between;
+  padding:10px 0;
+  font-size:13px;
+  letter-spacing:0.2px;
+}
+.info-row span:first-child{
+  opacity:0.6;
+}
+.info-row + .info-row{
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+/* series text */
+.series{
+  text-align:center;
+  font-size:12px;
+  opacity:0.55;
+  margin-top:10px;
+}
+
+/* modules */
+.modules{
+  max-width:350px;
+  margin:45px auto 26px;
+  padding:0 16px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+}
+
+.module{
+  padding:10px 12px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  background:rgba(20,20,20,0.14);
+  backdrop-filter:blur(2px);
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.12);
+  font-size:14px;
+  font-weight:500;
+}
+.module:active{opacity:.7;}
+.module-wide{grid-column:span 2;}
+
+.slogan{display:none;}
 </style>
 </head>
 
 <body>
 
 <header>
-  <img src="company-logo.png" alt="Company logo">
+<img src="company-logo.png">
 </header>
 
 <section class="product-hero">
-  <img src="product-logo.jpg" alt="Wormy">
+<img src="product-logo.jpg">
 </section>
+
+<div class="welcome">Welcome, Wormy owner.</div>
 
 <div class="info-panel">
 
-  <div class="status-pill">
-    <span class="check">✓</span>
-    Identified · Active
-  </div>
+<div class="status-pill">
+<span class="check">✓</span>
+Identified · Active
+</div>
 
-  <div class="info-row">
-    <span>Model</span>
-    <span>Wormy – Black Range System</span>
-  </div>
+<div class="info-row">
+<span>Model</span>
+<span>Wormy – Black Range System</span>
+</div>
 
-  <div class="info-row">
-    <span>Production year</span>
-    <span>2026</span>
-  </div>
+<div class="info-row">
+<span>Production year</span>
+<span>2026</span>
+</div>
 
-  <div class="info-row">
-    <span>Card serial</span>
-    <span id="card-serial">UNKNOWN</span>
-  </div>
+<div class="info-row">
+<span>Card serial</span>
+<span id="card-serial">UNKNOWN</span>
+</div>
+
+<div class="series">
+This Wormy is part of a registered production series.
+</div>
 
 </div>
 
 <section class="modules">
-  <a class="module" href="https://wor.my">Wormy main page</a>
-  <a class="module" href="https://wormy.glide.page">FishPin</a>
-  <a class="module" href="https://wormy.ai">Wormy AI assistant</a>
-  <a class="module" id="warranty-link">Warranty</a>
-  <a class="module module-wide" href="contact.html">Contact & Support</a>
+<a class="module" href="https://wor.my">Wormy main page</a>
+<a class="module" href="https://wormy.glide.page">FishPin</a>
+<a class="module" href="https://wormy.ai">Wormy AI assistant</a>
+<a class="module" id="warranty-link">Activate warranty</a>
+<a class="module module-wide" href="contact.html">Contact & Support</a>
 </section>
-
-<div class="slogan">
-  ONE system. Your Wormy.
-</div>
 
 <script>
 const params = new URLSearchParams(window.location.search);
 const card = params.get("card") || "UNKNOWN";
-
-// Kártyaszám megjelenítése az oldalon
 document.getElementById("card-serial").textContent = card;
 
-// Email subject és body
 const subject = encodeURIComponent("Wormy Warranty Activation");
-
 const body = encodeURIComponent(
 `Hello Wormy Team,
 
@@ -279,9 +233,24 @@ Thank you,
 Sent via Wormy NFC`
 );
 
-// Mailto összeállítás
-const mailtoLink = `mailto:join@wor.my?subject=${subject}&body=${body}`;
+document.getElementById("warranty-link").href =
+`mailto:join@wor.my?subject=${subject}&body=${body}`;
 
-// Warranty gombra ráültetés
-document.getElementById("warranty-link").href = mailtoLink;
+// subtle premium animation
+window.addEventListener("load",()=>{
+ const pill=document.querySelector(".status-pill");
+ if(pill){
+   pill.style.transform="translateX(-50%) scale(0.85)";
+   pill.style.opacity="0";
+   setTimeout(()=>{
+     pill.style.transition="all .6s ease";
+     pill.style.transform="translateX(-50%) scale(1)";
+     pill.style.opacity="1";
+   },200);
+ }
+});
 </script>
+
+</body>
+</html>
+
